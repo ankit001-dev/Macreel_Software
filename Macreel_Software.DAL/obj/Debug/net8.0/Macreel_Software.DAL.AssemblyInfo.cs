@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Macreel_Software.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca3bed25556d115e0189e5f919af72dd426a6213")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66e9a8fbc201ac7b07bc64baabb9808ad62ad86e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Macreel_Software.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Macreel_Software.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
