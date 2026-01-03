@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\Manisha\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.csproj.AssemblyReference.cache
 D:\Manisha\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.GeneratedMSBuildEditorConfig.editorconfig
 D:\Manisha\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.AssemblyInfoInputs.cache
@@ -35,3 +36,61 @@ D:\Manisha\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Softwa
 D:\Manisha\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\refint\Macreel_Software.DAL.dll
 D:\Manisha\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.pdb
 D:\Manisha\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\ref\Macreel_Software.DAL.dll
+=======
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.DAL.deps.json
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.DAL.dll
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.DAL.pdb
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.Models.dll
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.Services.dll
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.Models.pdb
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.Services.pdb
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.csproj.AssemblyReference.cache
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.AssemblyInfoInputs.cache
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.AssemblyInfo.cs
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.csproj.CoreCompileInputs.cache
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_.F7CCE093.Up2Date
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.dll
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\refint\Macreel_Software.DAL.dll
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.pdb
+D:\Himansu_Projects\Macreel\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\ref\Macreel_Software.DAL.dll
+<<<<<<< HEAD
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.DAL.deps.json
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.DAL.dll
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.DAL.pdb
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.Models.dll
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.Services.dll
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.Models.pdb
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.Services.pdb
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.csproj.AssemblyReference.cache
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.AssemblyInfoInputs.cache
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.AssemblyInfo.cs
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.csproj.CoreCompileInputs.cache
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.sourcelink.json
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_.F7CCE093.Up2Date
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.dll
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\refint\Macreel_Software.DAL.dll
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.pdb
+Z:\Ankit Projects\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\ref\Macreel_Software.DAL.dll
+=======
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.DAL.deps.json
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.DAL.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.DAL.pdb
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.Models.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.Services.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.Models.pdb
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\bin\Debug\net8.0\Macreel_Software.Services.pdb
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.csproj.AssemblyReference.cache
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.AssemblyInfoInputs.cache
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.AssemblyInfo.cs
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.csproj.CoreCompileInputs.cache
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.sourcelink.json
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_.F7CCE093.Up2Date
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\refint\Macreel_Software.DAL.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\Macreel_Software.DAL.pdb
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.DAL\obj\Debug\net8.0\ref\Macreel_Software.DAL.dll
+>>>>>>> 678a88d1c8452b349dba713f437ad237ccff70b6
+>>>>>>> 4abf82fe748969c785645389280e6387c105c9e8

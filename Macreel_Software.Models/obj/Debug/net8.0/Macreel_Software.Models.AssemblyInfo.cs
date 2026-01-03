@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Macreel_Software.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66e9a8fbc201ac7b07bc64baabb9808ad62ad86e")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57f2cd3da02f70a791f3f4780afcff6b6b235e13")]
+>>>>>>> 4abf82fe748969c785645389280e6387c105c9e8
 [assembly: System.Reflection.AssemblyProductAttribute("Macreel_Software.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Macreel_Software.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

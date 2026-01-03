@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "0g7kY7IRNcI=",
   "success": true,
   "projectFilePath": "D:\\Manisha\\Macreel_Software\\Macreel_Software.Models\\Macreel_Software.Models.csproj",
+=======
+  "dgSpecHash": "gHQA46GGSa0=",
+  "success": true,
+  "projectFilePath": "D:\\deep work\\.netProject\\Macreel_Software\\Macreel_Software.Models\\Macreel_Software.Models.csproj",
+>>>>>>> 4abf82fe748969c785645389280e6387c105c9e8
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "9r6slZ1H3gE=",
   "success": true,
   "projectFilePath": "D:\\Manisha\\Macreel_Software\\Macreel_Software.Services\\Macreel_Software.Services.csproj",
@@ -22,5 +23,11 @@
     "C:\\Users\\admin\\.nuget\\packages\\system.security.cryptography.xml\\8.0.2\\system.security.cryptography.xml.8.0.2.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "RJ27C7x53wI=",
+  "success": true,
+  "projectFilePath": "D:\\deep work\\.netProject\\Macreel_Software\\Macreel_Software.Services\\Macreel_Software.Services.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> 4abf82fe748969c785645389280e6387c105c9e8
   "logs": []
 }

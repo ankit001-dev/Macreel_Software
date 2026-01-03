@@ -1,2 +1,10 @@
 D:\Himansu_Projects\Macreel\Macreel_Software\macreel_software.client\obj\Debug\macreel_software.client.esproj.CoreCompileInputs.cache
+<<<<<<< HEAD
 D:\Manisha\Macreel_Software\macreel_software.client\obj\Debug\macreel_software.client.esproj.CoreCompileInputs.cache
+=======
+<<<<<<< HEAD
+Z:\Ankit Projects\Macreel_Software\macreel_software.client\obj\Debug\macreel_software.client.esproj.CoreCompileInputs.cache
+=======
+D:\deep work\.netProject\Macreel_Software\macreel_software.client\obj\Debug\macreel_software.client.esproj.CoreCompileInputs.cache
+>>>>>>> 678a88d1c8452b349dba713f437ad237ccff70b6
+>>>>>>> 4abf82fe748969c785645389280e6387c105c9e8
