@@ -5,7 +5,14 @@ import { LayoutComponent } from './layout/layout.component';
 const routes: Routes = [
   { path: '', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
- 
+
+  // {
+  //   path: '', component: LayoutComponent,
+  //   children: [
+  //     { path: 'pages', loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule) },
+
+  //   ]
+  // } 
 ];
 
 @NgModule({
@@ -13,3 +20,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class FeatureRoutingModule { }
+
+

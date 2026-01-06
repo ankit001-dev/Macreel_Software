@@ -1,0 +1,70 @@
+<!-- PAGE WRAPPER -->
+<div id="page-wrapper" class="w-full min-h-screen bg-[#f6f7fb] p-6">
+
+  <!-- CONTENT CARD -->
+  <div id="daily-task-card" class="w-full bg-white rounded-xl shadow-md border border-gray-200">
+
+    <!-- HEADER -->
+    <div id="daily-task-header" class="flex flex-wrap items-center justify-between gap-4 px-6 py-4 border-b">
+
+      <!-- TITLE -->
+      <h2 class="text-lg font-semibold text-[#E6354B]">
+        Daily Task Report
+      </h2>
+
+      <!-- FILTER SECTION -->
+      <div id="filter-section" class="flex flex-wrap items-center gap-3">
+
+        <select
+           class="h-10 px-3 border rounded-md text-sm
+         focus:outline-none focus:ring-2 focus:ring-[#E6354B] min-w-[200px]">
+          <option value="1">--Select Employee--</option>
+          <option value="1">Manish Tyagi</option>
+          <option value="2">Priyanka</option>
+          <option value="3">Ankit</option>
+          <option value="4">Himanshu</option>
+          <option value="5">Simran</option>
+        </select>
+
+
+        <select
+          class="h-10 px-3 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#E6354B] min-w-[200px]">
+            <option value="0">--Select Month--</option>
+          <option value="1">January</option>
+  <option value="2">February</option>
+  <option value="3">March</option>
+  <option value="4">April</option>
+  <option value="5">May</option>
+  <option value="6">June</option>
+  <option value="7">July</option>
+  <option value="8">August</option>
+  <option value="9">September</option>
+  <option value="10">October</option>
+  <option value="11">November</option>
+  <option value="12">December</option>
+        </select>
+
+        <input type="date"
+          class="h-10 px-3 border rounded-md text-sm focus:outline-none focus:ring-2  focus:ring-[#E6354B] min-w-[100px]" />
+
+        <input type="date"
+          class="h-10 px-3 border rounded-md text-sm focus:outline-none focus:ring-2  focus:ring-[#E6354B] min-w-[100px]" />
+
+        <button class="h-10 px-4 bg-[#E6354B] text-[white] font-medium rounded-md transition min-w-[100px]">
+          Export to Excel
+        </button>
+
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div id="daily-task-body" class="p-6 min-h-[300px]">
+
+      <!-- EMPTY STATE / TABLE / CONTENT -->
+      <!-- Yahan tum table / chart / list add kar sakte ho -->
+
+    </div>
+
+  </div>
+
+</div>

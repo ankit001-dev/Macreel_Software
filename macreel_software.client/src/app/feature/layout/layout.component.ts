@@ -9,4 +9,13 @@ import { Component } from '@angular/core';
 export class LayoutComponent {
   sidebarOpen = true;
   profileOpen = false;
+
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
+   openMenu: string | null = null;
+
+  toggleMenu(menu: string) {
+    this.openMenu = this.openMenu === menu ? null : menu;
+  }
 }
