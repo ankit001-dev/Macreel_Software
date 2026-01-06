@@ -1,7 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Manisha\\Macreel_Software\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\Macreel-Software\\Macreel_Software\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4302B2B-877E-EBB6-A173-C32263D0A774}|Macreel_Software.Server\\Macreel_Software.Server.csproj|d:\\macreel-software\\macreel_software\\macreel_software.server\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4302B2B-877E-EBB6-A173-C32263D0A774}|Macreel_Software.Server\\Macreel_Software.Server.csproj|solutionrelative:macreel_software.server\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,6 +47,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NotificationController.cs",
+              "DocumentMoniker": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Server\\Controllers\\NotificationController.cs",
+              "RelativeDocumentMoniker": "Macreel_Software.Server\\Controllers\\NotificationController.cs",
+              "ToolTip": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Server\\Controllers\\NotificationController.cs",
+              "RelativeToolTip": "Macreel_Software.Server\\Controllers\\NotificationController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T05:59:24.473Z",
+              "EditorCaption": ""
             }
           ]
         }
