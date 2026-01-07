@@ -25,38 +25,46 @@ namespace Macreel_Software.Server.Controllers
         {
             try
             {
-                bool res = await _service.InsertRole(data);
+                int result = await _service.InsertRole(data);
 
-                if (res)
+                if (result == 1)
                 {
-                    return Ok(new
-                    {
-                        status = true,
-                        StatusCode = 200,
-                        message = data.id>0?"Role updated successfully!!":"Role inserted successfully"
-                    });
+                    return Ok(ApiResponse<object>.SuccessResponse(
+                        null,
+                        "Role inserted successfully"
+                    ));
                 }
-                else
+
+                if (result == 2)
                 {
-                    return BadRequest(new
-                    {
-                        status = false,
-                        StatusCode = 400,
-                        message = data.id > 0 ? "some error occured during updation!!" : "some error occured during insertion"
-                    });
+                    return Ok(ApiResponse<object>.SuccessResponse(
+                        null,
+                        "Role updated successfully"
+                    ));
                 }
+
+                if (result == -1)
+                {
+                    return StatusCode(409, ApiResponse<object>.FailureResponse(
+                        "Role already exists",
+                        409
+                    ));
+                }
+
+                return BadRequest(ApiResponse<object>.FailureResponse(
+                    "Some error occurred while saving role",
+                    400
+                ));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return StatusCode(500, new
-                {
-                    status = false,
-                    StatusCode = 500,
-                    message = "Internal server error",
-                    error = ex.Message
-                });
+                return StatusCode(500, ApiResponse<object>.FailureResponse(
+                    "Internal server error",
+                    500
+                ));
             }
         }
+
 
         [HttpGet("getAllRole")]
         public async Task<IActionResult> getAllRole(string? searchTerm = null, int? pageNumber = null,int? pageSize = null)
@@ -189,36 +197,43 @@ namespace Macreel_Software.Server.Controllers
         {
             try
             {
-                bool res = await _service.insertDepartment(data);
+                int result = await _service.insertDepartment(data);
 
-                if (res)
+                if (result == 1)
                 {
-                    return Ok(new
-                    {
-                        status = true,
-                        StatusCode = 200,
-                        message = data.id > 0 ? "Department updated successfully!!" : "Department inserted successfully"
-                    });
+                    return Ok(ApiResponse<object>.SuccessResponse(
+                        null,
+                        "Department inserted successfully"
+                    ));
                 }
-                else
+
+                if (result == 2)
                 {
-                    return BadRequest(new
-                    {
-                        status = false,
-                        StatusCode = 400,
-                        message = data.id > 0 ? "some error occured during updation!!" : "some error occured during insertion"
-                    });
+                    return Ok(ApiResponse<object>.SuccessResponse(
+                        null,
+                        "Department updated successfully"
+                    ));
                 }
+
+                if (result == -1)
+                {
+                    return StatusCode(409, ApiResponse<object>.FailureResponse(
+                        "Department already exists",
+                        409
+                    ));
+                }
+
+                return BadRequest(ApiResponse<object>.FailureResponse(
+                    "Some error occurred while saving department",
+                    400
+                ));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
-                {
-                    status = false,
-                    StatusCode = 500,
-                    message = "Internal server error",
-                    error = ex.Message
-                });
+                return StatusCode(500, ApiResponse<object>.FailureResponse(
+                    "Internal server error",
+                    500
+                ));
             }
         }
 
@@ -354,39 +369,45 @@ namespace Macreel_Software.Server.Controllers
         {
             try
             {
-                bool res = await _service.InsertDesignation(data);
+                int result = await _service.InsertDesignation(data);
 
-                if (res)
+                if (result == 1)
                 {
-                    return Ok(new
-                    {
-                        status = true,
-                        StatusCode = 200,
-                        message = data.id > 0 ? "Designation updated successfully!!" : "Designation inserted successfully"
-                    });
+                    return Ok(ApiResponse<object>.SuccessResponse(
+                        null,
+                        "Designation inserted successfully"
+                    ));
                 }
-                else
+
+                if (result == 2)
                 {
-                    return BadRequest(new
-                    {
-                        status = false,
-                        StatusCode = 400,
-                        message = data.id > 0 ? "some error occured during updation!!" : "some error occured during insertion"
-                    });
+                    return Ok(ApiResponse<object>.SuccessResponse(
+                        null,
+                        "Designation updated successfully"
+                    ));
                 }
+
+                if (result == -1)
+                {
+                    return StatusCode(409, ApiResponse<object>.FailureResponse(
+                        "Designation already exists",
+                        409
+                    ));
+                }
+
+                return BadRequest(ApiResponse<object>.FailureResponse(
+                    "Some error occurred while saving designation",
+                    400
+                ));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
-                {
-                    status = false,
-                    StatusCode = 500,
-                    message = "Internal server error",
-                    error = ex.Message
-                });
+                return StatusCode(500, ApiResponse<object>.FailureResponse(
+                    "Internal server error",
+                    500
+                ));
             }
         }
-
 
 
         [HttpGet("getAllDesignation")]

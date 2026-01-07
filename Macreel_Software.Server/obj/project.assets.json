@@ -1283,6 +1283,9 @@
       "Macreel_Software.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.3.0"
+        },
         "compile": {
           "bin/placeholder/Macreel_Software.Models.dll": {}
         },
@@ -3337,29 +3340,30 @@
     "net8.0": [
       "FirebaseAdmin >= 3.4.0",
       "Macreel_Software.DAL >= 1.0.0",
+      "Macreel_Software.Models >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.0",
       "Microsoft.AspNetCore.SpaProxy >= 8.*-*",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\macre\\.nuget\\packages\\": {},
+    "C:\\Users\\admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\deep work\\.netProject\\Macreel_Software\\Macreel_Software.Server\\Macreel_Software.Server.csproj",
+      "projectUniqueName": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Server\\Macreel_Software.Server.csproj",
       "projectName": "Macreel_Software.Server",
-      "projectPath": "D:\\deep work\\.netProject\\Macreel_Software\\Macreel_Software.Server\\Macreel_Software.Server.csproj",
-      "packagesPath": "C:\\Users\\macre\\.nuget\\packages\\",
-      "outputPath": "D:\\deep work\\.netProject\\Macreel_Software\\Macreel_Software.Server\\obj\\",
+      "projectPath": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Server\\Macreel_Software.Server.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\macre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3375,8 +3379,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\deep work\\.netProject\\Macreel_Software\\Macreel_Software.DAL\\Macreel_Software.DAL.csproj": {
-              "projectPath": "D:\\deep work\\.netProject\\Macreel_Software\\Macreel_Software.DAL\\Macreel_Software.DAL.csproj"
+            "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.DAL\\Macreel_Software.DAL.csproj": {
+              "projectPath": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.DAL\\Macreel_Software.DAL.csproj"
+            },
+            "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Models\\Macreel_Software.Models.csproj": {
+              "projectPath": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Models\\Macreel_Software.Models.csproj"
             }
           }
         }
@@ -3436,5 +3443,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Server\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
+    }
+  ]
 }

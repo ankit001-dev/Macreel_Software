@@ -2,11 +2,13 @@
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Macreel_Software.DAL;
+using Macreel_Software.DAL.Admin;
 using Macreel_Software.DAL.Auth;
 using Macreel_Software.DAL.Common;
 using Macreel_Software.DAL.Master;
 using Macreel_Software.Server;
 using Macreel_Software.Services;
+using Macreel_Software.Services.FileUpload.Services;
 using Macreel_Software.Services.FirebaseNotification;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -33,6 +35,8 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<JwtTokenProvider>();
 builder.Services.AddScoped<ICommonServices, CommonService>();
 builder.Services.AddScoped<IMasterService, MasterService>();
+builder.Services.AddScoped<IAdminServices, AdminServices>();
+builder.Services.AddScoped<FileUploadService>();
 
 builder.Services.AddCors(options =>
 {
@@ -88,9 +92,9 @@ builder.Services.AddScoped<JwtTokenProvider>();
 
 builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
-
-app.UseDefaultFiles();
 app.UseStaticFiles();
+app.UseDefaultFiles();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -27,4 +27,10 @@ namespace Macreel_Software.Models.Master
         public int id { get; set; }
         public string designationName { get; set; }
     }
+
+    public class ReportingManger
+    {
+        public int id { get; set; }
+        public string ReportingManagerName { get; set; }
+    }
 }

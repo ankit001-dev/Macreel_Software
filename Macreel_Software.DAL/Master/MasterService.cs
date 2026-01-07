@@ -22,35 +22,39 @@ namespace Macreel_Software.DAL.Master
         }
 
         #region role service
-        public async Task<bool> InsertRole(role data)
+        public async Task<int> InsertRole(role data)
         {
             try
             {
                 using (SqlCommand cmd = new SqlCommand("sp_role", _conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+
                     cmd.Parameters.AddWithValue("@id", data.id);
                     cmd.Parameters.AddWithValue("@rolename", data.rolename);
-                    cmd.Parameters.AddWithValue("@action",data.id>0? "updateRole" : "insert");
+                    cmd.Parameters.AddWithValue("@action", data.id > 0 ? "updateRole" : "insert");
+
+                    SqlParameter outputParam = new SqlParameter("@result", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(outputParam);
 
                     if (_conn.State != ConnectionState.Open)
                         await _conn.OpenAsync();
 
-                    int rowsAffected = await cmd.ExecuteNonQueryAsync();
-                    return rowsAffected > 0;
+                    await cmd.ExecuteNonQueryAsync();
+
+                    return Convert.ToInt32(outputParam.Value);
                 }
-            }
-            catch (Exception ex)
-            {
-             
-                throw;
             }
             finally
             {
                 if (_conn.State == ConnectionState.Open)
-                    _conn.CloseAsync();
+                    await _conn.CloseAsync();
             }
         }
+
 
         public async Task<(List<role> Data, int TotalRecords)> getAllRole( string? searchTerm,int? pageNumber,int? pageSize)
         {
@@ -178,33 +182,41 @@ namespace Macreel_Software.DAL.Master
         #region department service
 
 
-        public async Task<bool> insertDepartment(department data)
+        public async Task<int> insertDepartment(department data)
         {
             try
             {
                 using (SqlCommand cmd = new SqlCommand("sp_department", _conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", data.id);
-                    cmd.Parameters.AddWithValue("@departmentName", data.departmentName);
-                    cmd.Parameters.AddWithValue("@action", data.id > 0 ? "updatedDepartment" : "insert");
+
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = data.id;
+                    cmd.Parameters.Add("@departmentName", SqlDbType.VarChar, 150)
+                                  .Value = data.departmentName ?? "";
+
+                    cmd.Parameters.Add("@action", SqlDbType.VarChar, 30)
+                                  .Value = data.id > 0 ? "updatedDepartment" : "insert";
+
+                    SqlParameter resultParam = new SqlParameter("@result", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(resultParam);
 
                     if (_conn.State != ConnectionState.Open)
                         await _conn.OpenAsync();
 
-                    int rowsAffected = await cmd.ExecuteNonQueryAsync();
-                    return rowsAffected > 0;
-                }
-            }
-            catch (Exception ex)
-            {
+                    await cmd.ExecuteNonQueryAsync();
 
-                throw;
+                    return resultParam.Value != DBNull.Value
+                        ? Convert.ToInt32(resultParam.Value)
+                        : 0;
+                }
             }
             finally
             {
-                if (_conn.State == ConnectionState.Open)
-                    _conn.CloseAsync();
+                if (_conn.State != ConnectionState.Closed)
+                    await _conn.CloseAsync();
             }
         }
 
@@ -332,33 +344,41 @@ namespace Macreel_Software.DAL.Master
         #endregion
 
         #region designation
-        public async Task<bool> InsertDesignation(designation data)
+        public async Task<int> InsertDesignation(designation data)
         {
             try
             {
                 using (SqlCommand cmd = new SqlCommand("sp_designation", _conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", data.id);
-                    cmd.Parameters.AddWithValue("@designationName", data.designationName);
-                    cmd.Parameters.AddWithValue("@action", data.id > 0 ? "updateDesignation" : "insert");
+
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = data.id;
+                    cmd.Parameters.Add("@designationName", SqlDbType.VarChar, 150)
+                                  .Value = data.designationName ?? "";
+
+                    cmd.Parameters.Add("@action", SqlDbType.VarChar, 30)
+                                  .Value = data.id > 0 ? "updateDesignation" : "insert";
+
+                    SqlParameter resultParam = new SqlParameter("@result", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(resultParam);
 
                     if (_conn.State != ConnectionState.Open)
                         await _conn.OpenAsync();
 
-                    int rowsAffected = await cmd.ExecuteNonQueryAsync();
-                    return rowsAffected > 0;
-                }
-            }
-            catch (Exception ex)
-            {
+                    await cmd.ExecuteNonQueryAsync();
 
-                throw;
+                    return resultParam.Value != DBNull.Value
+                        ? Convert.ToInt32(resultParam.Value)
+                        : 0;
+                }
             }
             finally
             {
-                if (_conn.State == ConnectionState.Open)
-                    _conn.CloseAsync();
+                if (_conn.State != ConnectionState.Closed)
+                    await _conn.CloseAsync();
             }
         }
 
