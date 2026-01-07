@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "D:\\deep work\\.netProject\\Macreel_Software\\",
   "Documents": [
     {
@@ -33,6 +34,33 @@
     {
       "AbsoluteMoniker": "D:0:0:{65F04315-8379-0D0C-6131-78AC87D537EC}|Macreel_Software.Models\\Macreel_Software.Models.csproj|d:\\deep work\\.netproject\\macreel_software\\macreel_software.models\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65F04315-8379-0D0C-6131-78AC87D537EC}|Macreel_Software.Models\\Macreel_Software.Models.csproj|solutionrelative:macreel_software.models\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+  "WorkspaceRootPath": "D:\\Macreel-Software\\Macreel_Software\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4302B2B-877E-EBB6-A173-C32263D0A774}|Macreel_Software.Server\\Macreel_Software.Server.csproj|d:\\macreel-software\\macreel_software\\macreel_software.server\\controllers\\mastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4302B2B-877E-EBB6-A173-C32263D0A774}|Macreel_Software.Server\\Macreel_Software.Server.csproj|solutionrelative:macreel_software.server\\controllers\\mastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9736C7C-8EBE-60D3-92AA-C82284442EE0}|Macreel_Software.DAL\\Macreel_Software.DAL.csproj|d:\\macreel-software\\macreel_software\\macreel_software.dal\\master\\imasterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9736C7C-8EBE-60D3-92AA-C82284442EE0}|Macreel_Software.DAL\\Macreel_Software.DAL.csproj|solutionrelative:macreel_software.dal\\master\\imasterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9736C7C-8EBE-60D3-92AA-C82284442EE0}|Macreel_Software.DAL\\Macreel_Software.DAL.csproj|d:\\macreel-software\\macreel_software\\macreel_software.dal\\master\\masterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9736C7C-8EBE-60D3-92AA-C82284442EE0}|Macreel_Software.DAL\\Macreel_Software.DAL.csproj|solutionrelative:macreel_software.dal\\master\\masterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65F04315-8379-0D0C-6131-78AC87D537EC}|Macreel_Software.Models\\Macreel_Software.Models.csproj|d:\\macreel-software\\macreel_software\\macreel_software.models\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65F04315-8379-0D0C-6131-78AC87D537EC}|Macreel_Software.Models\\Macreel_Software.Models.csproj|solutionrelative:macreel_software.models\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65F04315-8379-0D0C-6131-78AC87D537EC}|Macreel_Software.Models\\Macreel_Software.Models.csproj|d:\\macreel-software\\macreel_software\\macreel_software.models\\master\\masterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65F04315-8379-0D0C-6131-78AC87D537EC}|Macreel_Software.Models\\Macreel_Software.Models.csproj|solutionrelative:macreel_software.models\\master\\masterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4302B2B-877E-EBB6-A173-C32263D0A774}|Macreel_Software.Server\\Macreel_Software.Server.csproj|d:\\macreel-software\\macreel_software\\macreel_software.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4302B2B-877E-EBB6-A173-C32263D0A774}|Macreel_Software.Server\\Macreel_Software.Server.csproj|solutionrelative:macreel_software.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> edb7241fc3ac658ef1515bfb03cb38a090975e83
     }
   ],
   "DocumentGroupContainers": [
@@ -73,6 +101,7 @@
               "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
+<<<<<<< HEAD
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "appsettings.json",
@@ -83,11 +112,28 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-01-07T07:56:36.614Z",
+=======
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Models\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "Macreel_Software.Models\\ApiResponse.cs",
+              "ToolTip": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Models\\ApiResponse.cs",
+              "RelativeToolTip": "Macreel_Software.Models\\ApiResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T12:25:48.636Z",
+>>>>>>> edb7241fc3ac658ef1515bfb03cb38a090975e83
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+<<<<<<< HEAD
               "Title": "login.component.html",
               "DocumentMoniker": "D:\\deep work\\.netProject\\Macreel_Software\\macreel_software.client\\src\\app\\feature\\auth\\login\\login.component.html",
               "RelativeDocumentMoniker": "macreel_software.client\\src\\app\\feature\\auth\\login\\login.component.html",
@@ -96,10 +142,21 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-01-03T06:10:16.653Z",
+=======
+              "Title": "MasterData.cs",
+              "DocumentMoniker": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Models\\Master\\MasterData.cs",
+              "RelativeDocumentMoniker": "Macreel_Software.Models\\Master\\MasterData.cs",
+              "ToolTip": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Models\\Master\\MasterData.cs",
+              "RelativeToolTip": "Macreel_Software.Models\\Master\\MasterData.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAADwvxAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T09:19:35.059Z",
+>>>>>>> edb7241fc3ac658ef1515bfb03cb38a090975e83
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 5,
               "Title": "Macreel_Software.Services.csproj",
               "DocumentMoniker": "D:\\deep work\\.netProject\\Macreel_Software\\Macreel_Software.Services\\Macreel_Software.Services.csproj",
@@ -109,10 +166,22 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-01-02T11:41:06.094Z",
+=======
+              "DocumentIndex": 0,
+              "Title": "MasterController.cs",
+              "DocumentMoniker": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Server\\Controllers\\MasterController.cs",
+              "RelativeDocumentMoniker": "Macreel_Software.Server\\Controllers\\MasterController.cs",
+              "ToolTip": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Server\\Controllers\\MasterController.cs",
+              "RelativeToolTip": "Macreel_Software.Server\\Controllers\\MasterController.cs",
+              "ViewState": "AgIAAFsBAAAAAAAAAAAgwIYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T08:47:37.62Z",
+>>>>>>> edb7241fc3ac658ef1515bfb03cb38a090975e83
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\deep work\\.netProject\\Macreel_Software\\Macreel_Software.Server\\Program.cs",
@@ -122,11 +191,23 @@
               "ViewState": "AgIAAF0AAAAAAAAAAAAAAGUAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-02T11:40:43.509Z",
+=======
+              "DocumentIndex": 1,
+              "Title": "IMasterService.cs",
+              "DocumentMoniker": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.DAL\\Master\\IMasterService.cs",
+              "RelativeDocumentMoniker": "Macreel_Software.DAL\\Master\\IMasterService.cs",
+              "ToolTip": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.DAL\\Master\\IMasterService.cs",
+              "RelativeToolTip": "Macreel_Software.DAL\\Master\\IMasterService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAMwBgAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T08:01:32.732Z",
+>>>>>>> edb7241fc3ac658ef1515bfb03cb38a090975e83
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< HEAD
               "Title": "Macreel_Software.Server.http",
               "DocumentMoniker": "D:\\deep work\\.netProject\\Macreel_Software\\Macreel_Software.Server\\Macreel_Software.Server.http",
               "RelativeDocumentMoniker": "Macreel_Software.Server\\Macreel_Software.Server.http",
@@ -161,10 +242,21 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-02T11:40:21.808Z",
+=======
+              "Title": "MasterService.cs",
+              "DocumentMoniker": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.DAL\\Master\\MasterService.cs",
+              "RelativeDocumentMoniker": "Macreel_Software.DAL\\Master\\MasterService.cs",
+              "ToolTip": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.DAL\\Master\\MasterService.cs",
+              "RelativeToolTip": "Macreel_Software.DAL\\Master\\MasterService.cs",
+              "ViewState": "AgIAAEwBAAAAAAAAAAAgwG4BAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T08:01:09.367Z",
+>>>>>>> edb7241fc3ac658ef1515bfb03cb38a090975e83
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 7,
               "Title": "UserData.cs",
               "DocumentMoniker": "D:\\deep work\\.netProject\\Macreel_Software\\Macreel_Software.Models\\UserData.cs",
@@ -175,6 +267,17 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-02T11:24:44.966Z",
               "EditorCaption": ""
+=======
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Server\\Program.cs",
+              "RelativeDocumentMoniker": "Macreel_Software.Server\\Program.cs",
+              "ToolTip": "D:\\Macreel-Software\\Macreel_Software\\Macreel_Software.Server\\Program.cs",
+              "RelativeToolTip": "Macreel_Software.Server\\Program.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T09:00:05.445Z"
+>>>>>>> edb7241fc3ac658ef1515bfb03cb38a090975e83
             }
           ]
         }
