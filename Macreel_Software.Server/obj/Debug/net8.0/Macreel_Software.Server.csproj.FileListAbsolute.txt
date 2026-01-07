@@ -442,3 +442,14 @@ D:\Macreel-Software\Macreel_Software\Macreel_Software.Server\obj\Debug\net8.0\re
 D:\Macreel-Software\Macreel_Software\Macreel_Software.Server\obj\Debug\net8.0\Macreel_Software.Server.pdb
 D:\Macreel-Software\Macreel_Software\Macreel_Software.Server\obj\Debug\net8.0\Macreel_Software.Server.genruntimeconfig.cache
 D:\Macreel-Software\Macreel_Software\Macreel_Software.Server\obj\Debug\net8.0\ref\Macreel_Software.Server.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.Server\bin\Debug\net8.0\FirebaseAdmin.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.Server\bin\Debug\net8.0\Google.Api.Gax.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.Server\bin\Debug\net8.0\Google.Api.Gax.Rest.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.Server\bin\Debug\net8.0\Google.Apis.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.Server\bin\Debug\net8.0\Google.Apis.Auth.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.Server\bin\Debug\net8.0\Google.Apis.Core.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.Server\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.Server\bin\Debug\net8.0\System.CodeDom.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.Server\bin\Debug\net8.0\System.Management.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.Server\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+D:\deep work\.netProject\Macreel_Software\Macreel_Software.Server\bin\Debug\net8.0\Firebase\firebase-service-account.json
