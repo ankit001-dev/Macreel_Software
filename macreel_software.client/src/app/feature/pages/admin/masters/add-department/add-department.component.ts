@@ -25,13 +25,13 @@ export class AddDepartmentComponent implements OnInit {
   pageNumber: number = 1;
   totalRecords: number = 0;
   searchText: string = '';
-   data: any[] = [];
-  constructor(private master: ManageMasterdataService) {}
+  data: any[] = [];
+  constructor(private master: ManageMasterdataService) { }
 
-   Roles: TableColumn<DepartmentRow>[] = [
-          { key: 'name', label: 'Name' },
-         
-        ];
+  Roles: TableColumn<DepartmentRow>[] = [
+    { key: 'name', label: 'Name' },
+
+  ];
   ngOnInit(): void {
     this.loadDepartments();
   }
@@ -81,7 +81,6 @@ export class AddDepartmentComponent implements OnInit {
       id: this.editingDepartmentId || 0,
       departmentName: this.departmentName
     };
-
     this.master.addOrUpdateDepartment(payload).subscribe({
       next: () => {
         Swal.fire({
@@ -97,39 +96,46 @@ export class AddDepartmentComponent implements OnInit {
         this.editingDepartmentId = null;
         this.loadDepartments();
       },
-      error: () => {
-        Swal.fire('Error', 'Failed to save department', 'error');
+      error: (err) => {
+        console.error('API Error 👉', err);
+
+        const errorMessage =
+          err?.error?.message ||
+          err?.error?.errorMessage ||
+          'Something went wrong';
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Error!',
+          text: errorMessage
+        });
       }
+
     });
   }
 
   // ================= EDIT =================
-editDepartment(row: DepartmentRow) {
-  this.master.getDepartmentById(row.id).subscribe({
-    next: (res) => {
+  editDepartment(row: DepartmentRow) {
+    this.master.getDepartmentById(row.id).subscribe({
+      next: (res) => {
+     
+        if (res.success && res.data?.length) {
 
-      // ✅ API response ke hisaab se
-      if (res.success && res.data?.length) {
+          const dept = res.data[0];
+       
+          this.departmentName = dept.departmentName;
+    
+          this.editingDepartmentId = dept.id;
 
-        const dept = res.data[0];
-
-        // ✅ FORM BIND
-        this.departmentName = dept.departmentName;
-
-        // ✅ ID SET (VERY IMPORTANT)
-        this.editingDepartmentId = dept.id;
-
-      } else {
-        Swal.fire('Error', 'Department not found', 'error');
+        } else {
+          Swal.fire('Error', 'Department not found', 'error');
+        }
+      },
+      error: () => {
+        Swal.fire('Error', 'Failed to fetch department', 'error');
       }
-    },
-    error: () => {
-      Swal.fire('Error', 'Failed to fetch department', 'error');
-    }
-  });
-}
-
-
+    });
+  }
 
   // ================= DELETE =================
   deleteDepartment(row: DepartmentRow) {

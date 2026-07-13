@@ -252,9 +252,9 @@ namespace Macreel_Software.DAL.Admin
                                 stateName = sdr["stateName"] != DBNull.Value ? sdr["stateName"].ToString() : null,
                                 cityName = sdr["cityName"] != DBNull.Value ? sdr["cityName"].ToString() : null,
                                 skill = sdr["skillsJson"] != DBNull.Value
-                ? JsonSerializer.Deserialize<List<Skill>>(sdr["skillsJson"].ToString()!)
-                : new List<Skill>()
-
+                                ? JsonSerializer.Deserialize<List<Skill>>(sdr["skillsJson"].ToString()!)
+                                : new List<Skill>(),
+                                ReportingManagerName = sdr["ReportingManager"] != DBNull.Value ? sdr["ReportingManager"].ToString():null,
                             });
                         }
                     }
@@ -321,7 +321,7 @@ namespace Macreel_Software.DAL.Admin
         {
             List<employeeRegistration> list = new List<employeeRegistration>();
             int totalRecords = 0;
-
+           string encryptedPassword = null;
             try
             {
                 using (SqlCommand cmd = new SqlCommand("sp_employee", _conn))
@@ -339,8 +339,15 @@ namespace Macreel_Software.DAL.Admin
                     {
                         while (await sdr.ReadAsync())
                         {
-                            if (totalRecords == 0 && sdr["TotalRecords"] != DBNull.Value)
-                                totalRecords = Convert.ToInt32(sdr["TotalRecords"]);
+                            encryptedPassword = sdr["password"] != DBNull.Value? sdr["password"].ToString(): null;
+
+                            string decryptedPassword = null;
+
+                            if (!string.IsNullOrEmpty(encryptedPassword))
+                            {
+                                decryptedPassword =  _pass.DecryptPassword(encryptedPassword);
+                            }
+                            if (totalRecords == 0 && sdr["TotalRecords"] != DBNull.Value)totalRecords = Convert.ToInt32(sdr["TotalRecords"]);
 
                             list.Add(new employeeRegistration
                             {
@@ -392,8 +399,10 @@ namespace Macreel_Software.DAL.Admin
                                 cityName = sdr["cityName"] != DBNull.Value ? sdr["cityName"].ToString() : null,
                                 skill = sdr["skillsJson"] != DBNull.Value
                 ? JsonSerializer.Deserialize<List<Skill>>(sdr["skillsJson"].ToString())
-                : new List<Skill>()
+                : new List<Skill>(),
+                                Password = decryptedPassword
                             });
+                         
                         }
                     }
                 }
@@ -1677,8 +1686,13 @@ namespace Macreel_Software.DAL.Admin
         }
 
 
-        public async Task<ApiResponse<List<TaskAssignDto>>> getAllAssignTask(string? searchTerm, int? pageNumber, int? pageSize, int? empId = null)
+        public async Task<ApiResponse<List<TaskAssignDto>>> getAllAssignTask(string? searchTerm, int? pageNumber, int? pageSize, int? empId = null,string? statusTerm=null)
         {
+
+            if(empId == 0)
+            {
+                empId = null;
+            }
             List<TaskAssignDto> list = new();
             int totalRecords = 0;
             try
@@ -1689,6 +1703,7 @@ namespace Macreel_Software.DAL.Admin
                     cmd.Parameters.AddWithValue("@action", "selectAll");
                     cmd.Parameters.AddWithValue("@empId", empId.HasValue ? empId.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@searchTerm", string.IsNullOrWhiteSpace(searchTerm) ? DBNull.Value :searchTerm);
+                    cmd.Parameters.AddWithValue("@statusTerm ", string.IsNullOrWhiteSpace(statusTerm) ? DBNull.Value : statusTerm);
                     cmd.Parameters.AddWithValue("@pageNumber", pageNumber.HasValue ? pageNumber.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@pageSize",pageSize.HasValue ? pageSize.Value : DBNull.Value);
                     if (_conn.State != ConnectionState.Open)

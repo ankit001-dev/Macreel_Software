@@ -1,9 +1,17 @@
-﻿using Macreel_Software.DAL;
+﻿using System.Reflection;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
+using Macreel_Software.DAL;
 using Macreel_Software.DAL.Auth;
 using Macreel_Software.Models;
+using Macreel_Software.Models.Common;
 using Macreel_Software.Services.MailSender;
+using Macreel_Software.Services.OTPVerification;
+using Microsoft.AspNetCore.DataProtection.KeyManagement.Internal;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Macreel_Software.Server.Controllers
 {
@@ -13,11 +21,18 @@ namespace Macreel_Software.Server.Controllers
     {
         private readonly IAuthServices _authServices;
         private readonly JwtTokenProvider _jwtProvider;
+        //private readonly IMemoryCache _cache;
+        //private readonly OTPVerificationService _otpService;
+        private readonly MailSender _mailservice;
+        private readonly PasswordEncrypt _pass;
 
-        public AuthController(IAuthServices authServices,JwtTokenProvider jwtProvider, PasswordEncrypt pass)
+        public AuthController(IAuthServices authServices,JwtTokenProvider jwtProvider, PasswordEncrypt pass, MailSender sender)
         {
             _authServices = authServices;
             _jwtProvider = jwtProvider;
+            //_otpService = otpService;
+            _mailservice =sender;
+            _pass=pass;
         }
 
         [HttpPost("login")]
@@ -78,14 +93,12 @@ namespace Macreel_Software.Server.Controllers
             if (user == null)
                 return Unauthorized();
 
-            // Generate new access token
             var newAccessToken = _jwtProvider.CreateToken(user);
 
-            // Set new access token cookie
             Response.Cookies.Append("access_token", newAccessToken, new CookieOptions
             {
                 HttpOnly = true,
-                Secure = true,               // prod
+                Secure = true,               
                 SameSite = SameSiteMode.None,
                 Expires = DateTime.UtcNow.AddMinutes(30)
             });
@@ -118,5 +131,112 @@ namespace Macreel_Software.Server.Controllers
             });
         }
 
+
+        #region forget password
+
+        //private string GetFlowId()
+        //{
+        //    return Request.Headers["X-Flow-Id"].FirstOrDefault();
+        //}
+
+
+        //[HttpPost("get-otp")]
+        //public async Task<IActionResult> GetOtp([FromBody] ForgetPasswordRequest data)
+        //{
+        //    try
+        //    {
+        //        if (data == null || string.IsNullOrWhiteSpace(data.Email))
+        //            return BadRequest(new { status = false, message = "Email is required" });
+
+        //        var user = await _authServices.CheckUserExistOrNot(data.Email);
+        //        if (user == null)
+        //            return NotFound(new { status = false, message = "User not found" });
+
+        //        var (flowId, otp) = await _otpService.GenerateOtpAsync(data.Email);
+
+        //        var mailStatus = await _mailservice.SendMailAsync(new MailRequest
+        //        {
+        //            ToEmail = data.Email,
+        //            Subject = "OTP for Password Reset",
+        //            BodyType = MailBodyType.ForgotPassword,
+        //            otp = otp
+        //        });
+
+        //        if (mailStatus == null)
+        //            return StatusCode(500, new { status = false, message = "Failed to send OTP email" });
+
+        //        return Ok(new { status = true, message = "OTP sent successfully", flowId });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, new { status = false, message = "Something went wrong", error = ex.Message });
+        //    }
+        //}
+
+        //[HttpPost("verify-otp")]
+        //public async Task<IActionResult> VerifyOtp([FromBody] VerifyOtpRequest data)
+        //{
+        //    try
+        //    {
+        //        if (data == null || string.IsNullOrWhiteSpace(data.Otp))
+        //            return BadRequest(new { status = false, message = "OTP is required" });
+
+        //        var flowId = GetFlowId();
+        //        if (string.IsNullOrEmpty(flowId))
+        //            return BadRequest(new { status = false, message = "FlowId missing" });
+
+        //        bool isValid = await _otpService.VerifyOtpAsync(flowId, data.Otp);
+        //        if (!isValid)
+        //            return BadRequest(new { status = false, message = "Incorrect or expired OTP" });
+
+        //        return Ok(new { status = true, message = "OTP verified successfully" });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, new { status = false, message = "Something went wrong", error = ex.Message });
+        //    }
+        //}
+
+        //[HttpPost("reset-password")]
+        //public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordRequest data)
+        //{
+        //    try
+        //    {
+        //        if (data == null || string.IsNullOrWhiteSpace(data.NewPassword))
+        //            return BadRequest(new { status = false, message = "New password is required" });
+
+        //        var flowId = GetFlowId();
+        //        if (string.IsNullOrEmpty(flowId))
+        //            return BadRequest(new { status = false, message = "FlowId missing" });
+
+        //        bool isVerified = await _otpService.IsFlowVerifiedAsync(flowId);
+        //        if (!isVerified)
+        //            return BadRequest(new { status = false, message = "OTP not verified" });
+
+        //        string email = await _otpService.GetEmailByFlowIdAsync(flowId);
+        //        if (string.IsNullOrEmpty(email))
+        //            return BadRequest(new { status = false, message = "Session expired" });
+
+        //        int? userId = await _authServices.GetUserIdByEmailId(email);
+        //        if (userId == null)
+        //            return BadRequest(new { status = false, message = "User not found" });
+
+        //        var encryptedPassword = _pass.EncryptPassword(data.NewPassword);
+        //        var result = await _authServices.UpdatePassword(encryptedPassword, userId);
+        //        if (!result)
+        //            return BadRequest(new { status = false, message = "Password update failed" });
+
+        //        await _otpService.ClearFlowAsync(flowId);
+
+        //        return Ok(new { status = true, message = "Password updated successfully" });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, new { status = false, message = "Something went wrong", error = ex.Message });
+        //    }
+        //}
     }
+
+    #endregion
 }
+

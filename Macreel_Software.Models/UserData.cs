@@ -40,6 +40,20 @@
         public string Message { get; set; }
     }
 
+    public class ForgetPasswordRequest
+    {
+        public string Email { get; set; }
+    }
+
+    public class VerifyOtpRequest
+    {
+        public string Otp { get; set; }
+    }
+
+    public class ResetPasswordRequest
+    {
+        public string NewPassword { get; set; }
+    }
 
 
 }

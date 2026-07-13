@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Macreel_Software.Services.FileUpload.Services;
 namespace Macreel_Software.Server.Controllers
 {
-    [Authorize(Roles ="employee")]
+    //[Authorize(Roles ="employee")]
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : ControllerBase

@@ -164,7 +164,9 @@ public class MailSender
 
             <p style=""text-align: center;"">
                 <a class=""btn""
-                   href=""http://macreelinfo.in/employee-registration?accessId={res}""
+          
+                   href=""https://macreelinfo.in/employee-registration?accessId={res}""
+
                    target=""_blank"">
                    Register Here
                 </a>
@@ -218,7 +220,7 @@ th {{ background-color: #f0f0f0; text-align: left; }}
 </table>
 <div class='footer'>
 <p>From Macreel Infosoft Pvt. Ltd.</p>
-<p>For Login : <a href='https://vakiluncle.co.in' target='_blank'>https://vakiluncle.co.in</a></p>
+<p>For Login : <a href='https://macreelinfo.in' target='_blank'>https://macreelinfo.in</a></p>
 <img src='https://vakiluncle.co.in/assets/img/logo.png' alt='Macreel Logo' width='120'/>
 </div>
 </div>

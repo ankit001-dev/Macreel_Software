@@ -37,7 +37,7 @@
 
         <!-- Employee Code -->
         <div class="relative">
-          <input type="text" formControlName="empCode" name="empCode" placeholder=" " class="peer w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-700
+          <input type="number" formControlName="empCode" name="empCode" placeholder=" " class="peer w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-700
            focus:border-[#C5192F] focus:ring-2 focus:ring-[#C5192F]/30 outline-none" />
           <label class="absolute left-3 top-2 text-sm text-gray-500 bg-white px-1 transition-all
            peer-focus:-top-2 peer-focus:text-xs
@@ -60,7 +60,8 @@
 
         <!-- Mobile Number -->
         <div class="relative">
-          <input type="tel" formControlName="mobile" name="mobile" placeholder=" " maxlength="10" class="peer w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-700
+          <input type="text" formControlName="mobile" name="mobile" placeholder=" " maxlength="10" inputmode="numeric"
+            class="peer w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-700
            focus:border-[#C5192F] focus:ring-2 focus:ring-[#C5192F]/30 outline-none" />
 
           <label class="absolute left-3 top-2 text-sm text-gray-500 bg-white px-1 transition-all
@@ -68,6 +69,20 @@
            peer-valid:-top-2 peer-valid:text-xs">
             Mobile Number <span class="text-red-500 text-[16px] font-medium">*</span>
           </label>
+
+          <!-- 🔴 ERROR MESSAGE -->
+          <p *ngIf="employeeForm.get('mobile')?.touched &&
+           employeeForm.get('mobile')?.invalid" class="text-xs text-red-600 mt-1">
+
+            <span *ngIf="employeeForm.get('mobile')?.errors?.['required']">
+              Mobile number is required
+            </span>
+
+            <span *ngIf="employeeForm.get('mobile')?.errors?.['pattern']">
+              Enter valid 10 digit mobile number
+            </span>
+          </p>
+
         </div>
 
         <!-- Department -->
@@ -125,15 +140,17 @@
           <select formControlName="reportingManagerId" name="reportingManagerId" class="peer w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-700 bg-white
            focus:border-[#C5192F] focus:ring-2 focus:ring-[#C5192F]/30 outline-none">
 
+            <option [value]="0">Admin</option>
             <option *ngFor="let manager of reportingManagers" [value]="manager.id">
               {{ manager.reportingManagerName }}
             </option>
+
           </select>
 
           <label class="absolute left-3 top-2 text-sm text-gray-500 bg-white px-1 transition-all
            peer-focus:-top-2 peer-focus:text-xs
            peer-valid:-top-2 peer-valid:text-xs">
-            Reporting Manager <span class="text-red-500 text-[16px] font-medium">*</span>
+            Reporting Manager
           </label>
           <span class="absolute right-3 top-2 text-gray-400 pointer-events-none"><i
               class="fa-solid fa-angle-down"></i></span>
@@ -142,7 +159,8 @@
         <!-- Email ID -->
         <div class="relative">
           <input type="email" formControlName="emailId" name="emailId" autocomplete="off" placeholder=" " class="peer w-full rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700
-           focus:border-[#C5192F] focus:ring-2 focus:ring-[#C5192F]/30 outline-none" [readonly]="showSendLinkButton" />
+           focus:border-[#C5192F] focus:ring-2 focus:ring-[#C5192F]/30 outline-none"
+            [readonly]="isEditMode || showSendLinkButton" />
 
           <label class="absolute left-3 top-[-10px] text-sm text-gray-500 bg-white px-1 transition-all
            peer-focus:-top-2 peer-focus:text-xs
@@ -191,16 +209,17 @@
 
         <!-- Password -->
         <div class="relative">
-          <input [type]="showPassword ? 'text' : 'password'" formControlName="password" [readonly]="isEditMode"
-            name="user_password" autocomplete="new-password" placeholder=" " class="peer w-full rounded-md border border-gray-300 px-4 py-2 pr-10 text-sm text-gray-700
-           focus:border-[#C5192F] focus:ring-2 focus:ring-[#C5192F]/30 outline-none" />
+          <input [type]="showPassword ? 'text' : 'password'" formControlName="password" name="user_password"
+            autocomplete="new-password" placeholder=" " class="peer w-full rounded-md border border-gray-300 px-4 py-2 pr-10 text-sm text-gray-700
+           focus:border-[#C5192F] focus:ring-2 focus:ring-[#C5192F]/30 outline-none" [readonly]="isEditMode" />
 
           <!-- Floating Label -->
-          <label class="absolute left-3 top-2 text-sm text-gray-500 bg-white px-1 transition-all
-           peer-focus:-top-2 peer-focus:text-xs
-           peer-valid:-top-2 peer-valid:text-xs">
+          <label class="absolute left-3 top-[-10px] text-sm text-gray-500 bg-white px-1 transition-all
+  peer-focus:-top-2 peer-focus:text-xs
+  peer-valid:-top-2 peer-valid:text-xs">
             Password <span class="text-red-500 text-[16px] font-medium">*</span>
           </label>
+
 
           <!-- Eye Button -->
           <button type="button" (click)="togglePassword()" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500
@@ -276,7 +295,7 @@
             <option value="" disabled hidden></option>
 
             <option value="Married">Married</option>
-            <option value="Married">Unmarried</option>
+            <option value="Unmarried">Unmarried</option>
             <option value="Divorced">Divorced</option>
             <option value="Widowed">Widowed</option>
           </select>
@@ -363,7 +382,7 @@
 
         <!-- Account Number -->
         <div class="relative">
-          <input type="text" formControlName="accountNo" name="accountNo" placeholder=" " class="peer w-full rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700
+          <input type="number" formControlName="accountNo" name="accountNo" placeholder=" " class="peer w-full rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700
            focus:border-[#C5192F] focus:ring-2 focus:ring-[#C5192F]/30 outline-none" />
 
           <label class="absolute left-3 top-2 text-sm text-gray-500 bg-white px-1 transition-all
@@ -414,8 +433,8 @@
 
         <!-- Emergency Contact Number (FIXED) -->
         <div class="relative">
-          <input type="tel" formControlName="emergencyContactNum" name="emergencyContactNum" placeholder=" "
-            maxlength="10" class="peer w-full rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700
+          <input type="text" formControlName="emergencyContactNum" name="emergencyContactNum" placeholder=" "
+            maxlength="10" inputmode="numeric" class="peer w-full rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700
            focus:border-[#C5192F] focus:ring-2 focus:ring-[#C5192F]/30 outline-none mt-6" />
 
           <label class="absolute left-3 top-2 text-sm text-gray-500 bg-white px-1 transition-all
@@ -424,6 +443,27 @@
             Emergency Contact Number
             <span class="text-red-500 text-[14px] font-medium">*</span>
           </label>
+
+          <p *ngIf="employeeForm.get('emergencyContactNum')?.touched &&
+           employeeForm.get('emergencyContactNum')?.invalid" class="text-xs text-red-600 mt-1">
+
+            <span *ngIf="employeeForm.get('emergencyContactNum')?.errors?.['required']">
+              Emergency contact number is required
+            </span>
+
+            <span *ngIf="employeeForm.get('emergencyContactNum')?.errors?.['pattern']">
+              Enter valid 10 digit number
+            </span>
+          </p>
+
+        </div>
+
+        <!-- Profile Image -->
+        <div class="relative">
+          <label class="block text-sm font-medium text-gray-500 mb-1">Profile Image <span
+              class="text-red-500 text-[14px] font-medium">*</span></label>
+          <input type="file" (change)="onFileSelected($event, 'profile')" accept=".jpg,.jpeg,.png"
+            class="w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-3 file:border-0 file:text-sm file:font-semibold file:bg-[#C5192F] file:text-white hover:file:bg-[#a41526] cursor-pointer border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C5192F]/30" />
         </div>
 
 
@@ -458,15 +498,6 @@
           </label>
           <input type="file" (change)="onFileSelected($event, 'panBack')" accept=".jpg,.jpeg,.png" class="w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-3
            file:border-0 file:bg-[#C5192F] file:text-white rounded-md border" />
-        </div>
-
-
-        <!-- Profile Image -->
-        <div class="relative">
-          <label class="block text-sm font-medium text-gray-500 mb-1">Profile Image <span
-              class="text-red-500 text-[14px] font-medium">*</span></label>
-          <input type="file" (change)="onFileSelected($event, 'profile')" accept=".jpg,.jpeg,.png"
-            class="w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-3 file:border-0 file:text-sm file:font-semibold file:bg-[#C5192F] file:text-white hover:file:bg-[#a41526] cursor-pointer border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C5192F]/30" />
         </div>
 
 
@@ -555,8 +586,8 @@
 
         <!-- Company Contact -->
         <div class="relative">
-          <input type="tel" formControlName="companyContactNo" name="companyContactNo" placeholder=" " maxlength="10"
-            class="peer w-full rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700
+          <input type="text" formControlName="companyContactNo" name="companyContactNo" maxlength="10"
+            inputmode="numeric" placeholder="" class="peer w-full rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700
            focus:border-[#C5192F] focus:ring-2 focus:ring-[#C5192F]/30 outline-none" />
 
           <label class="absolute left-3 top-2 text-sm text-gray-500 bg-white px-1 transition-all
@@ -564,6 +595,18 @@
            peer-valid:-top-2 peer-valid:text-xs">
             Company Contact
           </label>
+
+          <p *ngIf="employeeForm.get('companyContactNo')?.touched &&
+           employeeForm.get('companyContactNo')?.invalid" class="text-xs text-red-600 mt-1">
+
+            <span *ngIf="employeeForm.get('companyContactNo')?.errors?.['required']">
+              Company contact number is required
+            </span>
+
+            <span *ngIf="employeeForm.get('companyContactNo')?.errors?.['pattern']">
+              Enter valid 10 digit number
+            </span>
+          </p>
         </div>
 
 

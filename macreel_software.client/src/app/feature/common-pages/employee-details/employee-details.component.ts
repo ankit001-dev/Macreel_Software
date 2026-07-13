@@ -13,7 +13,10 @@ export interface EmployeeDetails {
   departmentName: string;
   designationId: string;
   designationName: string;
-  reportingManagerId: string;
+
+  reportingManagerId: number;
+  reportingManagerName: string;
+
   emailId: string;
   dateOfJoining: string;
   yearOfExperience: number;
@@ -43,7 +46,7 @@ export interface EmployeeDetails {
   experienceCertificatePath: string;
   tenthCertificatePath: string;
   twelthCertificatePath: string;
-  graduationCertificatePathan: string;
+  graduationCertificatePath: string;
   mastersCertificatePath: string;
   skill: any[];
   companyContactNo: number;

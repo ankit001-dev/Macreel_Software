@@ -13,7 +13,7 @@ using Microsoft.Data.SqlClient;
 
 namespace Macreel_Software.Server.Controllers
 {
-    [Authorize(Roles = "admin")]
+    //[Authorize(Roles = "admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class AdminController : ControllerBase
@@ -148,7 +148,7 @@ namespace Macreel_Software.Server.Controllers
 
                     await _mailservice.SendMailAsync(mailRequest);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     throw;
                 }
@@ -989,12 +989,12 @@ namespace Macreel_Software.Server.Controllers
 
 
         [HttpGet("getAllAssignTask")]
-        public async Task<IActionResult> getAllAssignTask(string? searchTerm = null, int? pageNumber = null, int? pageSize = null)
+        public async Task<IActionResult> getAllAssignTask(string? searchTerm = null, int? pageNumber = null, int? pageSize = null,string? statusTerm=null)
         {
             try
             {
                 ApiResponse<List<TaskAssignDto>> result =
-                    await _services.getAllAssignTask(searchTerm, pageNumber, pageSize);
+                    await _services.getAllAssignTask(searchTerm, pageNumber, pageSize,_userId, statusTerm);
 
 
                 return StatusCode(result.StatusCode, result);
