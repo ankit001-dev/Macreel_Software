@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FirebaseAdmin" Version="3.4.0" />
+    <PackageReference Include="FirebaseAdmin" Version="3.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
       <Version>8.*-*</Version>
@@ -20,18 +20,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\macreel_software.client\macreel_software.client.esproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
+    <Folder Include="wwwroot\uploads\" />
+    <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Macreel_Software.Contracts\Macreel_Software.Contracts.csproj" />
     <ProjectReference Include="..\Macreel_Software.DAL\Macreel_Software.DAL.csproj" />
     <ProjectReference Include="..\Macreel_Software.Models\Macreel_Software.Models.csproj" />
     <ProjectReference Include="..\Macreel_Software.Services\Macreel_Software.Services.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\uploads\" />
-    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
 </Project>

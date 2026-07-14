@@ -1,7 +1,7 @@
 ﻿using Macreel_Software.Contracts.DTOs;
+using Macreel_Software.Contracts.DTOs.MyPinDtos;
 using Macreel_Software.Models;
 using Macreel_Software.Models.Common;
-using Microsoft.AspNetCore.Http;
 
 namespace Macreel_Software.DAL.Common
 {
@@ -20,5 +20,10 @@ namespace Macreel_Software.DAL.Common
         Task<bool> InsertProjectEmp(ProjectEmp data, int? userid,string? addedBy);
         Task<ApiResponse<List<AssignedProjectEmpDto>>> AssignedProjectEmpList(int projectId);
         Task<bool> UpdateProjectEmpStatusSingle(ProjectEmpStatusItem model, int adminId);
+
+        #region My Pin
+        Task<bool> CheckIsMyDayEnd(Guid? publicId);
+        Task<bool> SaveActivities(EndMyDayRequestDto request);
+        #endregion
     }
 }

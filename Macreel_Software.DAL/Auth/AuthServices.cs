@@ -52,6 +52,7 @@ namespace Macreel_Software.DAL.Auth
                             UserId = dr["UserId"] != DBNull.Value? Convert.ToInt32(dr["UserId"]):0,
                             Username = dr["UserName"].ToString()!,
                             Role = dr["roleName"].ToString()!.ToLower(),
+                            Name = dr["Name"].ToString()!.ToLower(),
                             
                         };
                     }
@@ -284,5 +285,29 @@ namespace Macreel_Software.DAL.Auth
             }
         }
 
+        public async Task<bool> SaveFcmToken(FcmTokenRequestDto dto)
+        {
+            using SqlConnection con = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            try
+            {
+                using SqlCommand cmd = new SqlCommand("sp_saveFcmToken", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@action", "saveToken");
+                cmd.Parameters.AddWithValue("@userId", dto.userId);
+                cmd.Parameters.AddWithValue("@roleId", dto.roleId);
+                cmd.Parameters.AddWithValue("@fcmToken", dto.FCMToken);
+                cmd.Parameters.AddWithValue("@deviceType", dto.DeviceType.ToString());
+
+                if (con.State == ConnectionState.Closed)
+                    await con.OpenAsync();
+
+                int res = await cmd.ExecuteNonQueryAsync();
+                return res > 0;
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

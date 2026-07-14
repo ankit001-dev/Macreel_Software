@@ -1,10 +1,4 @@
 ﻿using Macreel_Software.Models;
-using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Macreel_Software.DAL.Auth.main;
 
 namespace Macreel_Software.DAL.Auth
@@ -19,6 +13,7 @@ namespace Macreel_Software.DAL.Auth
         Task<int?> CheckUserExistOrNot(string email);
         Task<int?> GetUserIdByEmailId(string email);
         Task<bool> UpdatePassword(string encryptedPassword, int? userId);
+        Task<bool> SaveFcmToken(FcmTokenRequestDto dto);
     }
     
 }

@@ -1,9 +1,11 @@
-﻿using System.Data;
-using Macreel_Software.Contracts.DTOs;
+﻿using Macreel_Software.Contracts.DTOs;
+using Macreel_Software.Contracts.DTOs.MyPinDtos;
 using Macreel_Software.Models;
 using Macreel_Software.Models.Common;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using System.Data;
 namespace Macreel_Software.DAL.Common
 {
     public class CommonService : ICommonServices
@@ -500,12 +502,98 @@ namespace Macreel_Software.DAL.Common
                     await _conn.CloseAsync();
             }
         }
+        #endregion
 
+        #region My Pin Services
+        public async Task<bool> SaveActivities(EndMyDayRequestDto request)
+        {
+            try
+            {
+                int result = 0;
+                using (SqlCommand cmd = new SqlCommand("sp_EmployeeActivityLog", _conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    cmd.Parameters.AddWithValue("@Userid", request.UserId);
+                    cmd.Parameters.AddWithValue("@updatedBy", request.UserId);
+                    cmd.Parameters.AddWithValue("@public_id", request.public_id ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@isEndMyDay", request.isEndMyDay);
+                    cmd.Parameters.AddWithValue("@LogoutTime", request.LogoutTime);
+                    cmd.Parameters.AddWithValue("@Action", "UpdateActivityLog");
+                    cmd.Parameters.AddWithValue("@ActivityKey",
+                    string.IsNullOrEmpty(request.ActivityKey) ? (object)DBNull.Value : request.ActivityKey);
+                    var activityList = new List<object>();
+                    if (request.ActivityValue != null)
+                    {
+                        if (request.ActivityValue is Newtonsoft.Json.Linq.JArray jArray)
+                        {
+                            activityList = jArray.ToObject<List<object>>();
+                        }
+                        else
+                        {
+                            activityList.Add(request.ActivityValue);
+                        }
+                    }
+
+                    cmd.Parameters.AddWithValue("@ActivityValue", activityList.Count == 0 ? (object)DBNull.Value : JsonConvert.SerializeObject(activityList));
+                    cmd.Parameters.AddWithValue("@totalWorkingHrs", string.IsNullOrEmpty(request.TotalWorkingHrs) ? (object)DBNull.Value : request.TotalWorkingHrs);
+                    cmd.Parameters.AddWithValue("@LateReason",
+                            string.IsNullOrEmpty(request.LateReason) ? (object)DBNull.Value : request.LateReason);
+                    if (_conn.State == ConnectionState.Closed)
+                        _conn.Open();
+                    result = await cmd.ExecuteNonQueryAsync();
+                }
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("SaveActivities Error: " + ex.Message);
+            }
+            finally
+            {
+                if (_conn.State == ConnectionState.Open)
+                    _conn.Close();
+            }
+        }
+
+        public async Task<bool> CheckIsMyDayEnd(Guid? publicId)
+        {
+            bool isMyDayEnd = false;
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_EmployeeActivityLog", _conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@Action", SqlDbType.VarChar).Value = "CheckIsMyEndDay";
+                    cmd.Parameters.Add("@public_id", SqlDbType.UniqueIdentifier).Value = publicId;
+
+                    if (_conn.State == ConnectionState.Closed)
+                        _conn.Open();
+
+                    SqlDataReader sdr = await cmd.ExecuteReaderAsync();
+
+                    if (await sdr.ReadAsync())
+                    {
+                        isMyDayEnd = sdr["isEndMyDay"] != DBNull.Value ? Convert.ToBoolean(sdr["isEndMyDay"]) : false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                if (_conn.State == ConnectionState.Open)
+                    _conn.Close();
+            }
+            return isMyDayEnd;
+        }
+        #endregion
     }
 }
 
-        #endregion
 
     
 
