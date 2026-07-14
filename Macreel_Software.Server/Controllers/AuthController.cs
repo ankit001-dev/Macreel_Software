@@ -235,8 +235,24 @@ namespace Macreel_Software.Server.Controllers
         //        return StatusCode(500, new { status = false, message = "Something went wrong", error = ex.Message });
         //    }
         //}
+        #endregion
+
+        #region Save FCM Token
+        [HttpPost("save-fcm-token")]
+        public async Task<IActionResult> SaveFcmToken(FcmTokenRequest request)
+        {
+            var dto = new FcmTokenRequestDto
+            {
+                userId = int.Parse(User.FindFirst("UserId")?.Value ?? "0"),
+                roleId = int.Parse(User.FindFirst(ClaimTypes.Role)?.Value ?? "0"),
+                FCMToken = request.FCMToken,
+                DeviceType = request.DeviceType
+            };
+            bool res = await _authServices.SaveFcmToken(dto);
+            return Ok(new { status = res, StatusCode = res ? 200 : 400, message = res ? "FCM token saved successfully" : "Failed to save FCM token" });
+        }
+        #endregion
     }
 
-    #endregion
 }
 

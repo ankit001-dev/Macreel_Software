@@ -1,4 +1,6 @@
-﻿namespace Macreel_Software.Models
+﻿using Macreel_Software.Models.Enums;
+
+namespace Macreel_Software.Models
 {
     public class UserData
     {
@@ -54,6 +56,17 @@
     {
         public string NewPassword { get; set; }
     }
-
+    public class FcmTokenRequest
+    {
+        public string FCMToken { get; set; }
+        public NotificationDeviceType DeviceType { get; set; }
+    }
+    public class FcmTokenRequestDto
+    {
+        public int userId { get; set; }
+        public int roleId { get; set; }
+        public string FCMToken { get; set; }
+        public NotificationDeviceType DeviceType { get; set; }
+    }
 
 }

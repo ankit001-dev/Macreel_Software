@@ -3,9 +3,19 @@
     <Build />
     <Deploy Solution="Release|*" />
   </Project>
-  <Project Path="Macreel_Software.Contracts/Macreel_Software.Contracts.csproj" Id="5df3a5c2-7a38-4ca7-a522-707c490eb466" />
-  <Project Path="Macreel_Software.DAL/Macreel_Software.DAL.csproj" />
-  <Project Path="Macreel_Software.Models/Macreel_Software.Models.csproj" />
-  <Project Path="Macreel_Software.Server/Macreel_Software.Server.csproj" />
-  <Project Path="Macreel_Software.Services/Macreel_Software.Services.csproj" />
+  <Project Path="Macreel_Software.Contracts/Macreel_Software.Contracts.csproj" Id="5df3a5c2-7a38-4ca7-a522-707c490eb466">
+    <BuildType Project="Debug" />
+  </Project>
+  <Project Path="Macreel_Software.DAL/Macreel_Software.DAL.csproj">
+    <BuildType Project="Debug" />
+  </Project>
+  <Project Path="Macreel_Software.Models/Macreel_Software.Models.csproj">
+    <BuildType Project="Debug" />
+  </Project>
+  <Project Path="Macreel_Software.Server/Macreel_Software.Server.csproj">
+    <BuildType Project="Debug" />
+  </Project>
+  <Project Path="Macreel_Software.Services/Macreel_Software.Services.csproj">
+    <BuildType Project="Debug" />
+  </Project>
 </Solution>

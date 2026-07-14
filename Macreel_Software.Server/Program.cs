@@ -1,4 +1,4 @@
-﻿    using System.Text;
+﻿using System.Text;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Macreel_Software.DAL;
