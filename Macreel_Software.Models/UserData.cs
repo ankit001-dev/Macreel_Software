@@ -6,6 +6,7 @@ namespace Macreel_Software.Models
     {
         public int Id { get; set; }
         public int UserId { get; set; }
+        public string Name { get; set; }
         public string Username { get; set; }
         public string Role { get; set; }
 
@@ -13,6 +14,8 @@ namespace Macreel_Software.Models
     public class LoginResponse
     {
         public int UserId { get; set; }
+        public string UserName { get; set; }
+        public string Name { get; set; }
         public string AccessToken { get; set; }
         public string RefreshToken { get; set; }
         public DateTime RefreshTokenExpire { get; set; }
@@ -22,6 +25,8 @@ namespace Macreel_Software.Models
     {
         public string UserName { get; set; }
         public string Password { get; set; }
+        public string? IpAddress { get; set; } 
+        public string? WifiName { get; set; } 
     
     }
     public class LoginRequestDto
@@ -67,6 +72,10 @@ namespace Macreel_Software.Models
         public int roleId { get; set; }
         public string FCMToken { get; set; }
         public NotificationDeviceType DeviceType { get; set; }
+    }
+    public class RefreshTokenRequest
+    {
+        public string RefreshToken { get; set; }
     }
 
 }

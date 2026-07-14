@@ -58,9 +58,10 @@ export class LoginComponent implements OnInit {
               return;
             }
             this.auth.setRole(userRole);
+            
             if(userRole == 'admin' || userRole == 'manager')
               this.router.navigate(['/home/admin']);
-            else if(userRole == 'employee')
+            else if(userRole == 'employee'||userRole=='hr')
               this.router.navigate(['/home/employee'])
             else
               this.router.navigate(['/error'])
