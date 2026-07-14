@@ -1,5 +1,5 @@
-﻿using System.Security.Claims;
-using Macreel_Software.Contracts.DTOs;
+﻿using Macreel_Software.Contracts.DTOs;
+using Macreel_Software.Contracts.DTOs.MyPinDtos;
 using Macreel_Software.DAL.Admin;
 using Macreel_Software.DAL.Common;
 using Macreel_Software.DAL.Master;
@@ -9,6 +9,9 @@ using Macreel_Software.Models.Master;
 using Macreel_Software.Services.FileUpload.Services;
 using Macreel_Software.Services.MailSender;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using System.Reflection;
+using System.Security.Claims;
 
 namespace Macreel_Software.Server.Controllers
 {
@@ -501,7 +504,6 @@ namespace Macreel_Software.Server.Controllers
         }
         #endregion
 
-
         #region Assigned Project for employee
 
         [HttpPost("AssignProjectToEmp")]
@@ -662,7 +664,6 @@ namespace Macreel_Software.Server.Controllers
         }
         #endregion
 
-
         #region role
 
 
@@ -687,7 +688,6 @@ namespace Macreel_Software.Server.Controllers
             }
         }
         #endregion
-
 
         #region department
         [HttpGet("getAllDepartment")]
@@ -764,6 +764,75 @@ namespace Macreel_Software.Server.Controllers
 
         #endregion
 
-    
+        #region My Pin Api
+        [HttpGet("get-server-time")]
+        public IActionResult GetServerTime()
+        {
+            try
+            {
+                var istZone = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
+                var istTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, istZone);
+                return Ok(new
+                {
+                    status = true,
+                    StatusCode = 200,
+                    message = "Server time fetched successfully",
+                    serverTime = istTime
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    status = false,
+                    StatusCode = 500,
+                    message = "An error occurred while fetching server time.",
+                    error = ex.Message
+                });
+            }
+        }
+        [HttpPost("end-my-day")]
+        public async Task<IActionResult> EndMyDay([FromBody] EndMyDayRequestDto request)
+        {
+            try
+            {
+                if (request == null)
+                {
+                    return BadRequest("No data received");
+                }
+                bool isMyDayEnd = await _service.CheckIsMyDayEnd(request.public_id);
+                if (!isMyDayEnd)
+                {
+                    await _service.SaveActivities(request);
+
+                    return Ok(new
+                    {
+                        status = true,
+                        StatusCode = 200,
+                        message = "Emp Daily Activity Saved Successfully!!"
+                    });
+                }
+                else
+                {
+                    return Ok(new
+                    {
+                        status = false,
+                        StatusCode = 404,
+                        message = "This is done for the today !! ... you are logged out for today!!"
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    status = false,
+                    StatusCode = 500,
+                    message = "Error while saving activity",
+                    error = ex.Message
+                });
+            }
+        }
+        #endregion
     }
 }

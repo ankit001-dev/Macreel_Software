@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -29,12 +29,6 @@
     <ProjectReference Include="..\Macreel_Software.DAL\Macreel_Software.DAL.csproj" />
     <ProjectReference Include="..\Macreel_Software.Models\Macreel_Software.Models.csproj" />
     <ProjectReference Include="..\Macreel_Software.Services\Macreel_Software.Services.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Macreel_Software.Contracts">
-      <HintPath>..\Macreel_Software.Contracts\bin\Release\net8.0\Macreel_Software.Contracts.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
